@@ -39,4 +39,44 @@ public class StudentService {
         students.add(student);
     }
     
+    public String updateStudent(Student student){
+        int index=0;
+        boolean found=false;
+        for(int i=0;i<students.size();i++){
+            if(students.get(i).getRNo()==student.getRNo()){
+                index=i;
+                found=true;
+                break;
+
+            }
+        }
+        if(found==false){
+             return "No such element exists";
+        }else{
+            students.set(index, student);
+            return "Updation is done";
+        }
+    }
+        public String deleteStudent(int rNo){
+        int index=0;
+        boolean found=false;
+        for(int i=0;i<students.size();i++){
+            if(students.get(i).getRNo()==rNo){
+                index=i;
+                found=true;
+                break;
+
+            }
+        }
+        if(found==true){
+             students.remove(index);
+             return "Deleted sucessfully";
+        }else{
+           
+            return "No such student exists";
+        }
+
+        }
+       
+    
 }
