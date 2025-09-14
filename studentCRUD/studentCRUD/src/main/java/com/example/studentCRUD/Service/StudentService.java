@@ -21,5 +21,22 @@ public class StudentService {
     public List<Student> getStudents(){
         return students;
     }
+
+   
+    public Student getStudentsByRnoStudent(int rollNo) {
+        int index=0;
+        for(int i=0;i<students.size();i++){
+            if(students.get(i).getRNo()==rollNo){
+                index=i;
+            }
+          
+        }
+          return students.get(index);
+    }
+
+
+    public void addStudent(Student student) {
+        students.add(student);
+    }
     
 }
